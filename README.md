@@ -3,6 +3,11 @@
 </p>
 
 <h1 align="center">
+  <p align="center">
+  <img src="https://img.shields.io/badge/status-em%20estruturação-8A2BE2"/>
+  <img src="https://img.shields.io/badge/foco-equidade%20racial-C71585"/>
+  <img src="https://img.shields.io/badge/RW-pilar%20estratégico-DA70D6"/>
+</p>
 Pilar de Equidade Racial — Risk Women
 </h1>
 
