@@ -12,6 +12,14 @@ Mapeamento estratégico de mulheres negras no mercado de riscos
 
 ---
 
+<p align="center">
+  <a href="./perguntas.md">Perguntas</a> •
+  <a href="./metodologia.md">Metodologia</a> •
+  <a href="./roadmap.md">Roadmap</a>
+</p>
+
+---
+
 # Pilar de Equidade Racial — Risk Women
 
 ## Contexto Estratégico
