@@ -1,6 +1,20 @@
+<p align="center">
+  <img src="./logorw.webp" width="220"/>
+</p>
+
+<h1 align="center">
+Pilar de Equidade Racial — Risk Women
+</h1>
+
+<p align="center">
+Mapeamento estratégico de mulheres negras no mercado de riscos
+</p>
+
+---
+
 # Pilar de Equidade Racial — Risk Women
 
-## Contexto
+## Contexto Estratégico
 
 Este repositório documenta a estrutura inicial de onboarding do pilar de equidade racial da Risk Women (RW).
 
@@ -10,7 +24,7 @@ Mais do que um cadastro, este onboarding funciona como uma base estratégica par
 
 ---
 
-## Objetivo do Pilar
+## Direcionamento do Pilar
 
 A proposta do pilar é fortalecer o crescimento de carreira de mulheres pretas dentro do mercado de risco, atuando de forma estruturada sobre barreiras relacionadas a acesso, visibilidade, networking e oportunidades.
 
@@ -28,7 +42,7 @@ O onboarding foi desenvolvido para:
 
 ---
 
-## Estrutura
+## Estrutura do Onboarding
 
 O onboarding foi dividido em:
 
@@ -48,6 +62,18 @@ A partir da consolidação das respostas, os próximos movimentos incluem:
 - identificação de padrões
 - definição de prioridades
 - estruturação das primeiras iniciativas direcionadas
+
+---
+
+## Premissas da Construção
+
+A estrutura do onboarding parte das seguintes premissas:
+
+- crescimento de carreira exige direcionamento estruturado
+- mulheres negras não representam um grupo homogêneo em termos de trajetória profissional
+- ações efetivas dependem de compreensão aprofundada da comunidade
+- dados devem orientar priorização e tomada de decisão
+- pertencimento deve funcionar como alavanca para desenvolvimento profissional
 
 ---
 
