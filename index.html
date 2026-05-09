@@ -30,7 +30,7 @@
     }
 
     h1 {
-      color: ##e88ac2;
+      color: #e88ac2;
       text-align: center;
       margin-bottom: 8px;
     }
@@ -75,10 +75,11 @@
       padding: 14px;
       border: none;
       border-radius: 10px;
-      background: ##e88ac2;
-      color: white;
+      background: #e88ac2;
+      color: #2b2033;
       font-size: 16px;
       font-weight: bold;
+      cursor: pointer;
     }
 
     .mensagem-sucesso {
@@ -89,7 +90,7 @@
       background: #3b2945;
       color: #ffffff;
       text-align: center;
-      border: 1px solid ##e88ac2;
+      border: 1px solid #e88ac2;
     }
   </style>
 </head>
@@ -102,9 +103,7 @@
 
     <h1>Onboarding Racial RW</h1>
 
-    <p>
-      Pilar de Equidade Racial — Risk Women
-    </p>
+    <p>Pilar de Equidade Racial — Risk Women</p>
 
     <form id="form">
 
@@ -177,7 +176,14 @@
           <label><input type="checkbox" name="temas" value="Equidade salarial e progressão profissional"> Equidade salarial e progressão profissional</label>
           <label><input type="checkbox" name="temas" value="Saúde emocional e permanência no ambiente corporativo"> Saúde emocional e permanência no ambiente corporativo</label>
           <label><input type="checkbox" name="temas" value="Transição e entrada no mercado de riscos"> Transição e entrada no mercado de riscos</label>
+          <label><input type="checkbox" name="temas" value="Outros"> Outros</label>
         </div>
+
+        <input 
+          type="text" 
+          name="outros_temas" 
+          placeholder="Se marcou outros, escreva aqui"
+        />
       </div>
 
       <button type="submit">Enviar respostas</button>
@@ -201,9 +207,13 @@
 
       const form = e.target;
 
-      const temas = Array.from(
+      let temas = Array.from(
         document.querySelectorAll('input[name="temas"]:checked')
       ).map(item => item.value);
+
+      if (form.outros_temas.value.trim() !== "") {
+        temas.push("Outros: " + form.outros_temas.value.trim());
+      }
 
       const data = {
         nome: form.nome.value,
