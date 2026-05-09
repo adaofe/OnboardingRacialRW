@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Onboarding — Risk Women</title>
+
+  <style>
+
+    body {
+      background-color: #0d1117;
+      color: white;
+      font-family: Arial, sans-serif;
+      max-width: 700px;
+      margin: auto;
+      padding: 30px;
+    }
+
+    h1 {
+      color: #d63384;
+      text-align: center;
+    }
+
+    p {
+      color: #c9d1d9;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    input,
+    select {
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      background: #161b22;
+      color: white;
+    }
+
+    .checkbox-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 14px;
+      border: none;
+      border-radius: 10px;
+      background: #d63384;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <h1>Risk Women</h1>
+
+  <p>
+    Onboarding — Pilar de Equidade Racial
+  </p>
+
+  <form id="form">
+
+    <div>
+      <label>Nome completo</label>
+      <input type="text" name="nome" required />
+    </div>
+
+    <div>
+      <label>E-mail</label>
+      <input type="email" name="email" required />
+    </div>
+
+    <div>
+      <label>Telefone</label>
+      <input type="text" name="telefone" required />
+    </div>
+
+    <div>
+      <label>Empresa</label>
+      <input type="text" name="empresa" required />
+    </div>
+
+    <div>
+      <label>Como você se autodeclara em relação à raça/cor?</label>
+
+      <select name="autodeclaracao" required>
+        <option value="">Selecione</option>
+        <option>Preta</option>
+        <option>Parda</option>
+        <option>Branca</option>
+        <option>Amarela</option>
+        <option>Indígena</option>
+        <option>Prefiro não responder</option>
+      </select>
+    </div>
+
+    <div>
+      <label>Em qual momento da carreira você se encontra hoje?</label>
+
+      <select name="momento_carreira" required>
+        <option value="">Selecione</option>
+        <option>Estudante / transição de carreira</option>
+        <option>Início de carreira (0–2 anos)</option>
+        <option>Pleno desenvolvimento (3–5 anos)</option>
+        <option>Sênior / especialista</option>
+        <option>Liderança / gestão</option>
+        <option>Executiva</option>
+      </select>
+    </div>
+
+    <div>
+      <label>Você atua hoje no mercado de riscos?</label>
+
+      <select name="mercado_riscos" required>
+        <option value="">Selecione</option>
+        <option>Sim</option>
+        <option>Não, mas quero migrar</option>
+        <option>Não</option>
+      </select>
+    </div>
+
+    <div>
+
+      <label>
+        Quais temas seriam mais relevantes para apoiar seu crescimento profissional hoje?
+      </label>
+
+      <div class="checkbox-group">
+
+        <label><input type="checkbox" name="temas" value="Desenvolvimento de carreira e crescimento profissional"> Desenvolvimento de carreira e crescimento profissional</label>
+
+        <label><input type="checkbox" name="temas" value="Liderança e acesso a posições estratégicas"> Liderança e acesso a posições estratégicas</label>
+
+        <label><input type="checkbox" name="temas" value="Preparação para cargos executivos"> Preparação para cargos executivos</label>
+
+        <label><input type="checkbox" name="temas" value="Mentoria e networking entre mulheres negras"> Mentoria e networking entre mulheres negras</label>
+
+        <label><input type="checkbox" name="temas" value="Visibilidade e influência no ambiente corporativo"> Visibilidade e influência no ambiente corporativo</label>
+
+        <label><input type="checkbox" name="temas" value="Desenvolvimento técnico na área de riscos"> Desenvolvimento técnico na área de riscos</label>
+
+        <label><input type="checkbox" name="temas" value="Equidade salarial e progressão profissional"> Equidade salarial e progressão profissional</label>
+
+        <label><input type="checkbox" name="temas" value="Saúde emocional e permanência no ambiente corporativo"> Saúde emocional e permanência no ambiente corporativo</label>
+
+        <label><input type="checkbox" name="temas" value="Transição e entrada no mercado de riscos"> Transição e entrada no mercado de riscos</label>
+
+      </div>
+
+    </div>
+
+    <button type="submit">
+      Enviar respostas
+    </button>
+
+  </form>
+
+  <script>
+
+    const scriptURL =
+      "https://script.google.com/macros/s/AKfycbxYGEJghK4bHJbThrQEQ6te3fKiW5esVpYH3YKosae3I-5ggpNTFKQx3d4NP-_act7x/exec";
+
+    document
+      .getElementById("form")
+      .addEventListener("submit", async function(e) {
+
+        e.preventDefault();
+
+        const form = e.target;
+
+        const temas = Array.from(
+          document.querySelectorAll('input[name="temas"]:checked')
+        ).map(item => item.value);
+
+        const data = {
+          nome: form.nome.value,
+          email: form.email.value,
+          telefone: form.telefone.value,
+          empresa: form.empresa.value,
+          autodeclaracao: form.autodeclaracao.value,
+          momento_carreira: form.momento_carreira.value,
+          mercado_riscos: form.mercado_riscos.value,
+          temas: temas
+        };
+
+        await fetch(scriptURL, {
+          method: "POST",
+          body: JSON.stringify(data)
+        });
+
+        alert("Resposta enviada com sucesso!");
+
+        form.reset();
+
+      });
+
+  </script>
+
+</body>
+
+</html>
